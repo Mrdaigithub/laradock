@@ -1,7 +1,12 @@
 {
 	"authHost": "localhost",
 	"authEndpoint": "/broadcasting/auth",
-	"clients": [],
+	"clients": [
+		{
+			"appId": "a3061fba3382f5a6",
+			"key": "719fde4d500affcdd367b65894477882"
+		}
+	],
 	"database": "redis",
 	"databaseConfig": {
 		"redis": {
@@ -9,11 +14,23 @@
 			"host": "redis"
 		}
 	},
-	"devMode": true,
+	"devMode": false,
 	"host": null,
 	"port": "6001",
-	"protocol": "http",
+	"protocol": "https",
 	"socketio": {},
-	"sslCertPath": "",
-	"sslKeyPath": ""
+	"sslCertPath": "/usr/src/app/ssl/wzyylm.com.cer",
+	"sslKeyPath": "/usr/src/app/ssl/wzyylm.com.key",
+	"sslCertChainPath": "/usr/src/app/ssl/wzyylm.com_ca.crt",
+	"sslPassphrase": "",
+	"subscribers": {
+		"http": true,
+		"redis": true
+	},
+	"apiOriginAllow": {
+		"allowCors": false,
+		"allowOrigin": "",
+		"allowMethods": "",
+		"allowHeaders": ""
+	}
 }
