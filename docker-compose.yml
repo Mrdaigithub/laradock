@@ -1292,3 +1292,20 @@ services:
         backend:
           aliases:
             - fetchmail
+
+### DOCKER-FTP-SERVER ################################################
+    ftpd_server:
+        image: stilliard/pure-ftpd
+        environment:
+          PUBLICHOST: "localhost"
+          FTP_USER_NAME: ${DOCKER_FTP_USER_NAME}
+          FTP_USER_PASS: ${DOCKER_FTP_USER_PASS}
+          FTP_USER_HOME: ${FTP_USER_HOME}
+        volumes:
+          - "${DOCKER_FTP_DIR}:/home/images"
+        ports:
+          - "${DOCKER_FTP_PORT}:21"
+        restart: always
+        networks:
+          - frontend
+          - backend
